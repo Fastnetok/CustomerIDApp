@@ -27,7 +27,23 @@ android {
         buildConfigField "String", "OPENAI_API_KEY", "\"${localProperties.getProperty('OPENAI_API_KEY', '')}\""
     }
 
+    // Fixed debug signing key (committed at app/debug.keystore) so that
+    // builds made on ANY machine (your PC, GitHub Actions) always share the
+    // same signature — required for in-app updates to install over an
+    // existing copy instead of failing with "App not installed".
+    signingConfigs {
+        debug {
+            storeFile file("debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -68,11 +84,6 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:21.3.0'
 
     // OCR - ML Kit Text Recognition (Play Services / unbundled variant).
-    // Using the unbundled play-services-mlkit-text-recognition artifact instead of
-    // com.google.mlkit:text-recognition, because the bundled version ships a native
-    // library (libmlkit_google_ocr_pipeline.so) that is not 16KB-page-size aligned,
-    // which triggers the "Android app compatibility" warning on newer devices.
-    // Same Kotlin API (TextRecognition.getClient(...)), model just downloads via Play Services.
     implementation 'com.google.android.gms:play-services-mlkit-text-recognition:19.0.1'
 
     // Networking (for AI/ChatGPT fallback API calls)
@@ -87,4 +98,3 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.2.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
 }
-// test
