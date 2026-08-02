@@ -1,0 +1,24 @@
+// Top-level build file
+buildscript {
+    ext.kotlin_version = "1.9.22"
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.2.2"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // Google services plugin (Firebase)
+        classpath "com.google.gms:google-services:4.4.1"
+    }
+}
+
+allprojects {
+    // Repositories are declared centrally in settings.gradle (dependencyResolutionManagement).
+    // Do NOT add a repositories{} block here — it conflicts with FAIL_ON_PROJECT_REPOS mode
+    // and causes: "Build was configured to prefer settings repositories over project repositories".
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

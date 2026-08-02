@@ -1,0 +1,47 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp" android:height="64dp" android:viewportWidth="64" android:viewportHeight="64">
+
+    <!-- Outer dial track -->
+    <path
+        android:pathData="M8,48 A24,24 0 1,1 56,48"
+        android:strokeColor="#E3E8F5"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Colored progress arc: green -> amber -> blue -->
+    <path
+        android:pathData="M8,48 A24,24 0 0,1 20,15.4"
+        android:strokeColor="#2E7D32"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M20,15.4 A24,24 0 0,1 44,15.4"
+        android:strokeColor="#F5A623"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M44,15.4 A24,24 0 0,1 52,32"
+        android:strokeColor="#1565C0"
+        android:strokeWidth="6"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Needle -->
+    <path
+        android:pathData="M32,32 L44,20"
+        android:strokeColor="#0D2E5C"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+
+    <!-- Center hub -->
+    <path
+        android:pathData="M32,32 m-4,0 a4,4 0 1,0 8,0 a4,4 0 1,0 -8,0"
+        android:fillColor="#0D2E5C" />
+    <path
+        android:pathData="M32,32 m-1.6,0 a1.6,1.6 0 1,0 3.2,0 a1.6,1.6 0 1,0 -3.2,0"
+        android:fillColor="#FFFFFF" />
+</vector>

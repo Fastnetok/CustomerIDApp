@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CustomerIDApp</string>
+    <string name="hint_customer_id">Customer ID</string>
+    <string name="action_login">Login</string>
+    <string name="label_register_subtitle">Enter your Customer ID and the PIN provided by your Admin/Installer</string>
+    <string name="hint_registration_pin">6-Digit PIN</string>
+    <string name="action_register">Register This Device</string>
+    <string name="action_skip_registration">Skip (Preview Mode)</string>
+    <string name="action_add_connection">+ Add Another Connection</string>
+    <string name="label_switch_connection">Switch Connection</string>
+    <string name="action_pay_now">Pay Now</string>
+    <string name="label_payment_source">Payment Source</string>
+    <string name="hint_amount">Amount Paid (Rs.)</string>
+    <string name="hint_transaction_id">Transaction ID (T-ID)</string>
+    <string name="action_upload_screenshot">Upload Payment Screenshot (OCR)</string>
+    <string name="action_submit_payment">Submit Payment</string>
+
+    <!-- Home Dashboard -->
+    <string name="app_title">Fastest Internet Services</string>
+    <string name="label_customer_id">Customer ID</string>
+    <string name="status_active">Active</string>
+    <string name="label_current_package">Current Package</string>
+    <string name="banner_title_line1">Ultra Fast</string>
+    <string name="banner_title_line2">Internet</string>
+    <string name="banner_subtitle">Stay Connected, Stay Ahead</string>
+    <string name="action_view_packages">View Packages</string>
+    <string name="title_upload_payment">Upload Payment</string>
+    <string name="title_upload_screenshot">Upload Screenshot</string>
+    <string name="subtitle_upload_payment">Upload payment screenshot for verification</string>
+    <string name="action_upload_proof">Upload Proof</string>
+    <string name="action_upload">Upload</string>
+    <string name="title_activation_status">Activation Status</string>
+    <string name="subtitle_activation_status">Your connection is</string>
+    <string name="status_pending_approval">Pending Approval</string>
+    <string name="status_disabled">Disabled</string>
+    <string name="title_outstanding_balance">Outstanding Balance</string>
+    <string name="subtitle_outstanding_balance">Remaining amount to be paid</string>
+    <string name="label_package_amount">Package Amount</string>
+    <string name="action_view_details">View Details</string>
+    <string name="nav_home">Home</string>
+    <string name="nav_usage">Usage</string>
+    <string name="nav_support">Support</string>
+    <string name="nav_payments">Payments</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Redesigned Dashboard v2 -->
+    <string name="banner_special_offer">SPECIAL OFFER</string>
+    <string name="banner_super_fast">SUPER FAST</string>
+    <string name="banner_speed_value">10 Mbps</string>
+    <string name="banner_unlimited">UNLIMITED INTERNET</string>
+    <string name="action_join_now">JOIN NOW</string>
+    <string name="banner_price">Rs. 1700/-</string>
+    <string name="banner_per_month">PER MONTH</string>
+    <string name="label_up_to_speed">Up to 10 Mbps</string>
+    <string name="title_make_payment">Make Payment</string>
+    <string name="subtitle_make_payment">Your package will remain active after payment. Upload payment proof to continue.</string>
+    <string name="note_make_payment">Note: This section will appear only when payment is due.</string>
+    <string name="title_upload_payment_proof">Upload Payment Proof</string>
+    <string name="subtitle_upload_payment_proof">Upload screenshot or payment receipt after payment.</string>
+    <string name="action_upload_now">Upload Now</string>
+    <string name="title_package_activation">Package Activation</string>
+    <string name="subtitle_package_activation">After uploading proof, your package will be activated within 30 minutes.</string>
+    <string name="activation_minutes_value">30</string>
+    <string name="activation_minutes_label">min</string>
+    <string name="label_activation_time">Activation Time</string>
+    <string name="nav_history">History</string>
+
+    <!-- Payment Method Screen -->
+    <string name="label_outstanding_amount">Outstanding Amount</string>
+    <string name="label_select_payment_method">Select Payment Method</string>
+    <string name="method_easypaisa">Easypaisa</string>
+    <string name="method_jazzcash">JazzCash</string>
+    <string name="method_sadapay">SadaPay</string>
+    <string name="method_faysalbank">Faysal Bank</string>
+    <string name="method_raastid">Raast ID</string>
+    <string name="method_bankalfalah">Bank Alfalah</string>
+    <string name="method_other_bank">Other Bank Transfer</string>
+    <string name="initials_easypaisa">EP</string>
+    <string name="initials_jazzcash">JC</string>
+    <string name="initials_sadapay">SP</string>
+    <string name="initials_faysalbank">FB</string>
+    <string name="initials_raastid">RD</string>
+    <string name="initials_bankalfalah">BA</string>
+    <string name="action_add_more_banks">+ Add More Banks</string>
+
+    <!-- Payment Verification Screen -->
+    <string name="label_detected_payment">Auto-Detected Payment (from SMS)</string>
+    <string name="label_date_time">Date &amp; Time</string>
+    <string name="label_amount">Amount</string>
+    <string name="label_sender_name">Sender Name</string>
+    <string name="label_sender_phone">Sender Phone</string>
+    <string name="note_auto_detected">This is read automatically from your SMS inbox. Please verify it matches your payment.</string>
+    <string name="label_transaction_id">Transaction ID (T-ID)</string>
+    <string name="note_transaction_id">Most important field — enter the T-ID exactly as shown in your payment receipt.</string>
+    <string name="label_or">OR</string>
+    <string name="action_upload_screenshot_short">Share Payment Screenshot</string>
+    <string name="note_ocr_ai_fallback">Read automatically via OCR. If unclear, AI will read it instead.</string>
+    <string name="msg_underpayment">Your payment appears incomplete. Please send the complete billing amount of Rs. %1$s and try again.</string>
+    <string name="msg_overpaid">The amount you sent is higher than your billing amount of Rs. %1$s. Please verify and pay the correct bill amount, or contact our helpline if this was intentional.</string>
+    <string name="label_need_help">Need Help? WhatsApp / Call Us</string>
+    <string name="helpline_number">0300-7951912</string>
+    <string name="label_select_language">Select Language / زبان منتخب کریں</string>
+    <string name="action_verify_activate">Verify &amp; Activate Package</string>
+    <string name="status_processing_title">Processing Your Payment</string>
+    <string name="status_processing_subtitle">Your package will activate automatically once verified.</string>
+    <string name="status_success_title">Package Activated!</string>
+    <string name="status_success_subtitle">Your payment was verified and the package is now active.</string>
+    <string name="status_still_processing">Still verifying — this is taking a little longer than usual. We\'ll notify you the moment it\'s confirmed.</string>
+
+    <!-- Screenshot OCR/AI verification messages -->
+    <string name="msg_tid_match">Screenshot verified — TID matches what you entered.</string>
+    <string name="msg_tid_mismatch">The TID found in the screenshot does not match what you entered. Please check and try again, or upload a clearer screenshot.</string>
+    <string name="msg_ocr_reading">Reading screenshot…</string>
+    <string name="msg_ai_reading">Screenshot unclear — reading with AI…</string>
+    <string name="msg_ai_failed">Could not read the screenshot automatically. Please double-check your manually entered TID and try again.</string>
+    <string name="msg_enter_tid_first">Please enter your TID above before uploading a screenshot.</string>
+
+    <!-- Support Screen -->
+    <string name="title_support">Support</string>
+    <string name="support_header_title">We\'re here to help</string>
+    <string name="support_header_subtitle">Reach out any time — we usually reply within minutes</string>
+    <string name="label_whatsapp_helpline">WhatsApp / Call Helpline</string>
+    <string name="note_whatsapp_helpline">For payments, packages, and general queries</string>
+    <string name="helpline_number_1">0300-7951912</string>
+    <string name="label_complaint_line">Complaint Line</string>
+    <string name="note_complaint_line">For connection issues and service complaints</string>
+    <string name="helpline_number_2">0321-1119966</string>
+    <string name="support_footer_hours">Available daily, 9:00 AM – 10:00 PM</string>
+</resources>

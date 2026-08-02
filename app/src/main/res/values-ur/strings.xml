@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">کسٹمر آئی ڈی ایپ</string>
+    <string name="hint_customer_id">کسٹمر آئی ڈی</string>
+    <string name="action_login">لاگ ان</string>
+    <string name="action_pay_now">ابھی ادائیگی کریں</string>
+    <string name="label_payment_source">ادائیگی کا ذریعہ</string>
+    <string name="hint_amount">ادا کی گئی رقم (روپے)</string>
+    <string name="hint_transaction_id">ٹرانزیکشن آئی ڈی (T-ID)</string>
+    <string name="action_upload_screenshot">ادائیگی کی اسکرین شاٹ اپلوڈ کریں (OCR)</string>
+    <string name="action_submit_payment">ادائیگی جمع کروائیں</string>
+
+    <!-- Home Dashboard -->
+    <string name="app_title">فاسٹسٹ انٹرنیٹ سروسز</string>
+    <string name="label_customer_id">کسٹمر آئی ڈی</string>
+    <string name="status_active">فعال</string>
+    <string name="label_current_package">موجودہ پیکج</string>
+    <string name="banner_title_line1">الٹرا فاسٹ</string>
+    <string name="banner_title_line2">انٹرنیٹ</string>
+    <string name="banner_subtitle">جڑے رہیں، آگے رہیں</string>
+    <string name="action_view_packages">پیکجز دیکھیں</string>
+    <string name="title_upload_payment">ادائیگی اپلوڈ کریں</string>
+    <string name="title_upload_screenshot">اسکرین شاٹ اپلوڈ کریں</string>
+    <string name="subtitle_upload_payment">تصدیق کے لیے ادائیگی کی اسکرین شاٹ اپلوڈ کریں</string>
+    <string name="action_upload_proof">ثبوت اپلوڈ کریں</string>
+    <string name="action_upload">اپلوڈ کریں</string>
+    <string name="title_activation_status">ایکٹیویشن اسٹیٹس</string>
+    <string name="subtitle_activation_status">آپ کا کنکشن ہے</string>
+    <string name="status_pending_approval">منظوری کا انتظار</string>
+    <string name="status_disabled">غیر فعال</string>
+    <string name="title_outstanding_balance">باقی رقم</string>
+    <string name="subtitle_outstanding_balance">ادا کرنے کے لیے باقی رقم</string>
+    <string name="label_package_amount">پیکج کی رقم</string>
+    <string name="action_view_details">تفصیلات دیکھیں</string>
+    <string name="nav_home">ہوم</string>
+    <string name="nav_usage">استعمال</string>
+    <string name="nav_support">سپورٹ</string>
+    <string name="nav_payments">ادائیگیاں</string>
+    <string name="nav_profile">پروفائل</string>
+
+    <!-- Redesigned Dashboard v2 -->
+    <string name="banner_special_offer">خصوصی آفر</string>
+    <string name="banner_super_fast">سپر فاسٹ</string>
+    <string name="banner_speed_value">10 ایم بی پی ایس</string>
+    <string name="banner_unlimited">لامحدود انٹرنیٹ</string>
+    <string name="action_join_now">ابھی شامل ہوں</string>
+    <string name="banner_price">1700 روپے</string>
+    <string name="banner_per_month">فی مہینہ</string>
+    <string name="label_up_to_speed">10 ایم بی پی ایس تک</string>
+    <string name="title_make_payment">ادائیگی کریں</string>
+    <string name="subtitle_make_payment">ادائیگی کے بعد آپ کا پیکج فعال رہے گا۔ جاری رکھنے کے لیے ادائیگی کا ثبوت اپلوڈ کریں۔</string>
+    <string name="note_make_payment">نوٹ: یہ حصہ صرف اس وقت نظر آئے گا جب ادائیگی واجب ہو۔</string>
+    <string name="title_upload_payment_proof">ادائیگی کا ثبوت اپلوڈ کریں</string>
+    <string name="subtitle_upload_payment_proof">ادائیگی کے بعد اسکرین شاٹ یا رسید اپلوڈ کریں۔</string>
+    <string name="action_upload_now">ابھی اپلوڈ کریں</string>
+    <string name="title_package_activation">پیکج ایکٹیویشن</string>
+    <string name="subtitle_package_activation">ثبوت اپلوڈ کرنے کے بعد، آپ کا پیکج 30 منٹ کے اندر فعال ہو جائے گا۔</string>
+    <string name="activation_minutes_value">30</string>
+    <string name="activation_minutes_label">منٹ</string>
+    <string name="label_activation_time">ایکٹیویشن ٹائم</string>
+    <string name="nav_history">ہسٹری</string>
+
+    <!-- Payment Method Screen -->
+    <string name="label_outstanding_amount">باقی رقم</string>
+    <string name="label_select_payment_method">ادائیگی کا طریقہ منتخب کریں</string>
+    <string name="method_easypaisa">ایزی پیسہ</string>
+    <string name="method_jazzcash">جاز کیش</string>
+    <string name="method_sadapay">سادا پے</string>
+    <string name="method_faysalbank">فیصل بینک</string>
+    <string name="method_raastid">راست آئی ڈی</string>
+    <string name="method_bankalfalah">بینک الفلاح</string>
+    <string name="method_other_bank">دیگر بینک ٹرانسفر</string>
+    <string name="initials_easypaisa">EP</string>
+    <string name="initials_jazzcash">JC</string>
+    <string name="initials_sadapay">SP</string>
+    <string name="initials_faysalbank">FB</string>
+    <string name="initials_raastid">RD</string>
+    <string name="initials_bankalfalah">BA</string>
+    <string name="action_add_more_banks">+ مزید بینک شامل کریں</string>
+
+    <!-- Payment Verification Screen -->
+    <string name="label_detected_payment">خودکار طور پر معلوم شدہ ادائیگی (SMS سے)</string>
+    <string name="label_date_time">تاریخ اور وقت</string>
+    <string name="label_amount">رقم</string>
+    <string name="label_sender_name">بھیجنے والے کا نام</string>
+    <string name="label_sender_phone">بھیجنے والے کا نمبر</string>
+    <string name="note_auto_detected">یہ آپ کے SMS ان باکس سے خودکار طور پر پڑھا گیا ہے۔ براہ کرم تصدیق کریں کہ یہ آپ کی ادائیگی سے مطابقت رکھتا ہے۔</string>
+    <string name="label_transaction_id">ٹرانزیکشن آئی ڈی (T-ID)</string>
+    <string name="note_transaction_id">سب سے اہم فیلڈ — اپنی ادائیگی کی رسید میں دکھائی گئی T-ID بالکل ویسی درج کریں۔</string>
+    <string name="label_or">یا</string>
+    <string name="action_upload_screenshot_short">ادائیگی کی اسکرین شاٹ شیئر کریں</string>
+    <string name="note_ocr_ai_fallback">OCR کے ذریعے خودکار طور پر پڑھا جاتا ہے۔ اگر واضح نہ ہو تو AI اسے پڑھے گا۔</string>
+    <string name="action_verify_activate">تصدیق کریں اور پیکج فعال کریں</string>
+    <string name="status_processing_title">آپ کی ادائیگی پر کارروائی ہو رہی ہے</string>
+    <string name="status_processing_subtitle">تصدیق ہوتے ہی آپ کا پیکج خودکار طور پر فعال ہو جائے گا۔</string>
+    <string name="status_success_title">پیکج فعال ہو گیا!</string>
+    <string name="status_success_subtitle">آپ کی ادائیگی کی تصدیق ہو گئی اور پیکج اب فعال ہے۔</string>
+    <string name="status_still_processing">تصدیق ہو رہی ہے — معمول سے تھوڑا وقت لگ رہا ہے۔ تصدیق ہوتے ہی ہم آپ کو مطلع کریں گے۔</string>
+
+    <!-- Screenshot OCR/AI verification messages -->
+    <string name="msg_tid_match">اسکرین شاٹ کی تصدیق ہو گئی — T-ID آپ کی درج کردہ سے مماثل ہے۔</string>
+    <string name="msg_tid_mismatch">اسکرین شاٹ میں موجود T-ID آپ کی درج کردہ T-ID سے مماثل نہیں۔ براہ کرم چیک کریں اور دوبارہ کوشش کریں، یا واضح اسکرین شاٹ اپلوڈ کریں۔</string>
+    <string name="msg_ocr_reading">اسکرین شاٹ پڑھا جا رہا ہے…</string>
+    <string name="msg_ai_reading">اسکرین شاٹ واضح نہیں — AI سے پڑھا جا رہا ہے…</string>
+    <string name="msg_ai_failed">اسکرین شاٹ خودکار طور پر نہیں پڑھی جا سکی۔ براہ کرم اپنی درج کردہ T-ID دوبارہ چیک کریں اور کوشش کریں۔</string>
+    <string name="msg_enter_tid_first">اسکرین شاٹ اپلوڈ کرنے سے پہلے براہ کرم اوپر اپنی T-ID درج کریں۔</string>
+    <string name="msg_underpayment">آپ کی ادائیگی مکمل نہیں لگتی۔ براہ کرم %1$s روپے کی مکمل بلنگ رقم بھیجیں اور دوبارہ کوشش کریں۔</string>
+    <string name="msg_overpaid">آپ کی بھیجی گئی رقم آپ کی بلنگ رقم %1$s روپے سے زیادہ ہے۔ براہ کرم درست بل کی رقم ادا کریں، یا اگر یہ جان بوجھ کر تھا تو ہماری ہیلپ لائن سے رابطہ کریں۔</string>
+    <string name="label_need_help">مدد چاہیے؟ واٹس ایپ / کال کریں</string>
+    <string name="helpline_number">0300-7951912</string>
+    <string name="label_select_language">Select Language / زبان منتخب کریں</string>
+</resources>
