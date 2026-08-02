@@ -1,0 +1,66 @@
+name: Auto Release
+
+on:
+  push:
+    branches: [ "master" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Restore google-services.json
+        run: echo "${{ secrets.GOOGLE_SERVICES_JSON }}" | base64 --decode > app/google-services.json
+
+      - name: Restore local.properties
+        run: |
+          echo "sdk.dir=${ANDROID_HOME}" > local.properties
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> local.properties
+
+      - name: Read versionName from build.gradle
+        id: version
+        run: |
+          VERSION=$(grep "versionName" app/build.gradle | head -1 | sed -E 's/.*versionName[[:space:]]+"(.*)"/\1/')
+          echo "name=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Detected versionName: $VERSION"
+
+      - name: Check if this version was already released
+        id: check
+        run: |
+          if gh release view "v${{ steps.version.outputs.name }}" > /dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Grant execute permission for gradlew
+        if: steps.check.outputs.exists == 'false'
+        run: chmod +x gradlew
+
+      - name: Build debug APK
+        if: steps.check.outputs.exists == 'false'
+        run: ./gradlew assembleDebug
+
+      - name: Create GitHub Release with APK attached
+        if: steps.check.outputs.exists == 'false'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.name }}
+          name: Version ${{ steps.version.outputs.name }}
+          body: Automatic release for version ${{ steps.version.outputs.name }}.
+          files: app/build/outputs/apk/debug/app-debug.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
