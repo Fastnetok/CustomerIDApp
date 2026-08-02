@@ -20,6 +20,16 @@ import java.io.File
 import java.io.FileOutputStream
 import kotlin.concurrent.thread
 
+/**
+ * Checks GitHub Releases for a newer CustomerIDApp version, and — unlike a
+ * plain "open in browser" link — downloads the APK INSIDE the app with a
+ * progress bar, then goes straight to the system install prompt. No file
+ * sitting in the customer's Downloads folder, no extra manual steps.
+ *
+ * Android still requires one system confirmation ("Install this update?")
+ * before installing any APK that didn't come from the Play Store — that
+ * single tap can't be skipped, it's an OS security requirement.
+ */
 object VersionChecker {
 
     private const val GITHUB_API =
@@ -35,7 +45,6 @@ object VersionChecker {
         } catch (e: Exception) {
             return
         }
-        android.widget.Toast.makeText(context, "Checking for updates… (current: $currentVersionName)", android.widget.Toast.LENGTH_SHORT).show()
         checkGitHubRelease(context, currentVersionName)
     }
 
@@ -44,16 +53,9 @@ object VersionChecker {
             try {
                 val request = Request.Builder().url(GITHUB_API).build()
                 val response = client.newCall(request).execute()
+                if (!response.isSuccessful) return@thread
 
-                if (!response.isSuccessful) {
-                    showDebugToast(context, "Update check failed: HTTP ${response.code}")
-                    return@thread
-                }
-
-                val body = response.body?.string() ?: run {
-                    showDebugToast(context, "Update check failed: empty response")
-                    return@thread
-                }
+                val body = response.body?.string() ?: return@thread
                 val json = JSONObject(body)
                 val tagName = json.getString("tag_name")
                 val releaseNotes = json.optString("body", "")
@@ -67,19 +69,10 @@ object VersionChecker {
                     (context as? android.app.Activity)?.runOnUiThread {
                         showUpdateDialog(context, tagName, releaseNotes, downloadUrl)
                     }
-                } else {
-                    showDebugToast(context, "Already up to date (latest on GitHub: $latestVersionName)")
                 }
             } catch (e: Exception) {
                 android.util.Log.e("VersionChecker", "Update check failed", e)
-                showDebugToast(context, "Update check error: ${e.message}")
             }
-        }
-    }
-
-    private fun showDebugToast(context: Context, message: String) {
-        (context as? android.app.Activity)?.runOnUiThread {
-            android.widget.Toast.makeText(context, message, android.widget.Toast.LENGTH_LONG).show()
         }
     }
 
@@ -117,6 +110,7 @@ object VersionChecker {
             .show()
     }
 
+    /** Downloads the APK inside the app (with a progress dialog), then opens the install prompt. */
     private fun downloadAndInstall(context: android.app.Activity, apkUrl: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
             !context.packageManager.canRequestPackageInstalls()
