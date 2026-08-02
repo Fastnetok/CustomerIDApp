@@ -160,7 +160,11 @@ class PaymentVerificationActivity : AppCompatActivity() {
 
         if (!tidMatches) {
             screenshotVerified = false
-            showScreenshotStatus(getString(R.string.msg_tid_mismatch), isError = true)
+            val foundText = if (candidates.isNotEmpty()) candidates.joinToString(", ") else "(none found)"
+            showScreenshotStatus(
+                "TID mismatch.\nYou entered: $enteredTid\nFound in screenshot: $foundText",
+                isError = true
+            )
             return
         }
 
