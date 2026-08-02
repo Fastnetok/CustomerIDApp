@@ -131,6 +131,36 @@
                 android:padding="14dp"
                 android:textSize="15sp" />
 
+            <!-- Bank Transfer fallback: sender's own TID from a different bank
+                 never matches our receiving TID — sender name + amount + a
+                 time window is used instead when TID matching fails. -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="@string/label_sender_name_optional"
+                android:textColor="#212121"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/note_sender_name"
+                android:textColor="#757575"
+                android:textSize="11sp" />
+
+            <EditText
+                android:id="@+id/etSenderName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="@string/hint_sender_name"
+                android:inputType="textCapWords"
+                android:padding="14dp"
+                android:textSize="15sp" />
+
             <!-- Screenshot upload alternative -->
             <LinearLayout
                 android:layout_width="match_parent"

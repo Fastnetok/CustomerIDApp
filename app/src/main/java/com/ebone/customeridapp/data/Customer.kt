@@ -41,6 +41,11 @@ data class PaymentTransaction(
     val source: PaymentSource = PaymentSource.MANUAL,
     val amount: Double = 0.0,
     val bankTransactionId: String = "", // Manual T-ID entered by customer/admin
+    // For cross-bank/cross-wallet transfers (e.g. Bank Alfalah -> Easypaisa),
+    // the sender's own bank TID never matches the receiving side's TID —
+    // they're two independent systems. senderName + amount + a time window
+    // is the fallback match in that case (see PaymentSmsReceiver in Ebone Admin Panel).
+    val senderName: String? = null,
     val rawSmsText: String? = null,
     val ocrExtractedText: String? = null,
     val aiInterpretedAmount: Double? = null,

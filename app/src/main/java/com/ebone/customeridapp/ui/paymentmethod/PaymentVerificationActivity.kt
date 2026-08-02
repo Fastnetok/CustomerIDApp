@@ -95,7 +95,8 @@ class PaymentVerificationActivity : AppCompatActivity() {
 
         binding.btnUploadScreenshot.setOnClickListener {
             val tid = binding.etTransactionId.text.toString().trim()
-            if (tid.isEmpty()) {
+            val senderName = binding.etSenderName.text.toString().trim()
+            if (tid.isEmpty() && senderName.isEmpty()) {
                 showScreenshotStatus(getString(R.string.msg_enter_tid_first), isError = true)
                 return@setOnClickListener
             }
@@ -155,18 +156,23 @@ class PaymentVerificationActivity : AppCompatActivity() {
      *   - Overpaid by more -> flagged, ask customer to verify their bill.
      */
     private fun compareAndShowResult(rawText: String, enteredTid: String) {
-        val candidates = SmsPaymentParser.parseAllTidCandidates(rawText)
-        val tidMatches = candidates.any { it.equals(enteredTid.trim(), ignoreCase = true) }
+        if (enteredTid.isNotEmpty()) {
+            val candidates = SmsPaymentParser.parseAllTidCandidates(rawText)
+            val tidMatches = candidates.any { it.equals(enteredTid.trim(), ignoreCase = true) }
 
-        if (!tidMatches) {
-            screenshotVerified = false
-            val foundText = if (candidates.isNotEmpty()) candidates.joinToString(", ") else "(none found)"
-            showScreenshotStatus(
-                "TID mismatch.\nYou entered: $enteredTid\nFound in screenshot: $foundText",
-                isError = true
-            )
-            return
+            if (!tidMatches) {
+                screenshotVerified = false
+                val foundText = if (candidates.isNotEmpty()) candidates.joinToString(", ") else "(none found)"
+                showScreenshotStatus(
+                    "TID mismatch.\nYou entered: $enteredTid\nFound in screenshot: $foundText",
+                    isError = true
+                )
+                return
+            }
         }
+        // If enteredTid is empty, the customer is relying on Sender Name +
+        // amount + time matching instead (handled by Ebone Admin Panel's
+        // PaymentSmsReceiver) — skip straight to the amount check below.
 
         val detectedAmount = SmsPaymentParser.parse(rawText).amount
         if (detectedAmount != null && amount > 0) {
@@ -197,6 +203,7 @@ class PaymentVerificationActivity : AppCompatActivity() {
     }
 
     private fun showScreenshotStatus(message: String, isError: Boolean) {
+        hideKeyboard()
         binding.tvScreenshotStatus.visibility = View.VISIBLE
         binding.tvScreenshotStatus.text = message
         if (isError) {
@@ -208,10 +215,22 @@ class PaymentVerificationActivity : AppCompatActivity() {
         }
     }
 
+    /** Dismisses the on-screen keyboard so status messages/results are never hidden behind it. */
+    private fun hideKeyboard() {
+        val imm = getSystemService(android.content.Context.INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager
+        currentFocus?.let { imm.hideSoftInputFromWindow(it.windowToken, 0) }
+        currentFocus?.clearFocus()
+    }
+
     private fun onVerifyClicked() {
         val tid = binding.etTransactionId.text.toString().trim()
-        if (tid.isEmpty()) {
-            binding.etTransactionId.error = getString(R.string.label_transaction_id)
+        val senderName = binding.etSenderName.text.toString().trim()
+
+        if (tid.isEmpty() && senderName.isEmpty()) {
+            showScreenshotStatus(
+                "Please enter your Transaction ID, or at least your Sender Name.",
+                isError = true
+            )
             return
         }
 
@@ -222,7 +241,7 @@ class PaymentVerificationActivity : AppCompatActivity() {
                 // Block duplicate/fake entries: this TID must not already be
                 // used by ANY customer (prevents re-submitting the same
                 // payment, or one customer using another's TID).
-                if (repository.isTidAlreadyUsed(tid)) {
+                if (tid.isNotEmpty() && repository.isTidAlreadyUsed(tid)) {
                     showScreenshotStatus(
                         "This Transaction ID has already been used. Duplicate or fake entries are not allowed.",
                         isError = true
@@ -237,6 +256,7 @@ class PaymentVerificationActivity : AppCompatActivity() {
                         source = mapMethodToSource(methodName),
                         amount = amount,
                         bankTransactionId = tid,
+                        senderName = binding.etSenderName.text.toString().trim().ifEmpty { null },
                         status = PaymentStatus.PENDING
                     )
                 )
