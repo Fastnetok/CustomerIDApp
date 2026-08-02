@@ -127,4 +127,9 @@
     <string name="note_complaint_line">For connection issues and service complaints</string>
     <string name="helpline_number_2">0321-1119966</string>
     <string name="support_footer_hours">Available daily, 9:00 AM – 10:00 PM</string>
+
+    <!-- Bank Transfer fallback matching -->
+    <string name="label_sender_name_optional">Sender Name (Optional)</string>
+    <string name="note_sender_name">If paying via Bank Transfer, add your full name as shown on the transfer — helps us match your payment if the TID differs between banks.</string>
+    <string name="hint_sender_name">e.g. Muhammad Abbas</string>
 </resources>
