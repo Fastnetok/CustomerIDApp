@@ -131,6 +131,35 @@
                         android:textColor="#2E7D32"
                         android:textSize="11sp" />
                 </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutExpiryBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top"
+                    android:background="@drawable/bg_chip_expiry"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EXPIRES"
+                        android:textColor="#FFFFFF"
+                        android:textSize="9sp"
+                        android:letterSpacing="0.08"
+                        android:alpha="0.85" />
+
+                    <TextView
+                        android:id="@+id/tvExpiryDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        tools:text="03 Sep" />
+                </LinearLayout>
             </LinearLayout>
 
             <!-- Advertisement / Notice Board Banner (rotating promos, package prices, etc.) -->

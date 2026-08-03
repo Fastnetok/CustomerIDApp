@@ -174,7 +174,10 @@ class PaymentVerificationActivity : AppCompatActivity() {
         // amount + time matching instead (handled by Ebone Admin Panel's
         // PaymentSmsReceiver) — skip straight to the amount check below.
 
-        val detectedAmount = SmsPaymentParser.parse(rawText).amount
+        val detectedAmount = if (enteredTid.isNotEmpty())
+            SmsPaymentParser.amountNearTid(rawText, enteredTid)
+        else
+            SmsPaymentParser.parse(rawText).amount
         if (detectedAmount != null && amount > 0) {
             val paymentStatus = PaymentRules.evaluatePaymentStatus(detectedAmount, amount)
             when (paymentStatus) {
@@ -250,18 +253,24 @@ class PaymentVerificationActivity : AppCompatActivity() {
                     return@launch
                 }
 
-                val transactionId = repository.recordPayment(
-                    PaymentTransaction(
-                        customerId = customerId,
-                        source = mapMethodToSource(methodName),
-                        amount = amount,
-                        bankTransactionId = tid,
-                        senderName = binding.etSenderName.text.toString().trim().ifEmpty { null },
-                        status = PaymentStatus.PENDING
+                try {
+                    val transactionId = repository.recordPayment(
+                        PaymentTransaction(
+                            customerId = customerId,
+                            source = mapMethodToSource(methodName),
+                            amount = amount,
+                            bankTransactionId = tid,
+                            senderName = binding.etSenderName.text.toString().trim().ifEmpty { null },
+                            status = PaymentStatus.PENDING
+                        )
                     )
-                )
-                startListeningForVerification(transactionId)
-                showProcessingState()
+                    startListeningForVerification(transactionId)
+                    showProcessingState()
+                } catch (e: Exception) {
+                    binding.btnVerifyAndActivate.isEnabled = true
+                    showScreenshotStatus("Could not save your payment: ${e.message}", isError = true)
+                    return@launch
+                }
             }
         } else {
             showProcessingState()
@@ -282,7 +291,14 @@ class PaymentVerificationActivity : AppCompatActivity() {
                     countDownTimer?.cancel()
                     showSuccessState()
                 }
-                PaymentStatus.FAILED, PaymentStatus.INSUFFICIENT, PaymentStatus.OVERPAID -> {
+                PaymentStatus.FAILED -> {
+                    countDownTimer?.cancel()
+                    showScreenshotStatus(
+                        "We couldn't activate your package automatically. Our team has been notified — please contact support if this continues.",
+                        isError = true
+                    )
+                }
+                PaymentStatus.INSUFFICIENT, PaymentStatus.OVERPAID -> {
                     countDownTimer?.cancel()
                     showScreenshotStatus(getString(R.string.msg_tid_mismatch), isError = true)
                 }

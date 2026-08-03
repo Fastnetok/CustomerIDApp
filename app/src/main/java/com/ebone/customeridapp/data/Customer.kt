@@ -24,6 +24,7 @@ data class Customer(
     val registrationPin: String? = null,
     val linkedDeviceId: String? = null,
     val ispProvider: String = "EBONE", // EBONE | WATEEN | ZONG — jis Company ki Service hai
+    val ispExpiryDate: String? = null, // Panel se scrape ki hui expiry date (WebViewLoginActivity se aati hai)
 
     // --- Billing cycle (subscription-style auto-expiry, admin-configurable) ---
     // e.g. electricity-bill style: package stays Active for N days after payment,

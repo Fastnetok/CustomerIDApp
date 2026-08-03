@@ -64,6 +64,7 @@ class HomeActivity : AppCompatActivity() {
         binding.tvStatusChip.text = getString(R.string.status_active)
         binding.tvPackageSpeed.text = "6 Mbps"
         binding.tvIspProvider.text = "Powered by Ebone"
+        binding.tvExpiryDate.text = "03 Sep"
         binding.tvValidTill.text = "Valid Till: 30 Aug 2026"
     }
 
@@ -74,6 +75,12 @@ class HomeActivity : AppCompatActivity() {
             binding.tvCustomerId.text = customer.customerId
             binding.tvPackageSpeed.text = customer.packageId // e.g. "6 Mbps"
             binding.tvIspProvider.text = "Powered by ${customer.ispProvider.lowercase().replaceFirstChar { it.uppercase() }}"
+            if (!customer.ispExpiryDate.isNullOrBlank()) {
+                binding.layoutExpiryBadge.visibility = android.view.View.VISIBLE
+                binding.tvExpiryDate.text = customer.ispExpiryDate
+            } else {
+                binding.layoutExpiryBadge.visibility = android.view.View.GONE
+            }
 
             // Status is derived from the billing cycle (electricity-bill style):
             // Active until billingCycleDays after lastPaymentDate, then Disabled.
