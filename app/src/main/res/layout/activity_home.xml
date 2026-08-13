@@ -107,6 +107,7 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textSize="17sp"
+                        android:textColor="#1565C0"
                         tools:text="ABBAS001" />
 
                     <TextView

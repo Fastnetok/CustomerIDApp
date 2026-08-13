@@ -86,7 +86,7 @@
                     <ImageView android:layout_width="44dp" android:layout_height="44dp" android:src="@drawable/ic_badge_accent" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/initials_easypaisa" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="14sp" android:letterSpacing="0.02" />
                 </FrameLayout>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_easypaisa" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_easypaisa" android:textColor="#616161" android:textStyle="bold" android:textSize="15sp" />
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
@@ -103,7 +103,7 @@
                     <ImageView android:layout_width="44dp" android:layout_height="44dp" android:src="@drawable/ic_badge_accent" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/initials_jazzcash" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="14sp" android:letterSpacing="0.02" />
                 </FrameLayout>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_jazzcash" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_jazzcash" android:textColor="#616161" android:textStyle="bold" android:textSize="15sp" />
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
@@ -120,7 +120,7 @@
                     <ImageView android:layout_width="44dp" android:layout_height="44dp" android:src="@drawable/ic_badge_accent" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/initials_sadapay" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="14sp" android:letterSpacing="0.02" />
                 </FrameLayout>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_sadapay" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_sadapay" android:textColor="#616161" android:textStyle="bold" android:textSize="15sp" />
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
@@ -137,7 +137,7 @@
                     <ImageView android:layout_width="44dp" android:layout_height="44dp" android:src="@drawable/ic_badge_accent" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/initials_faysalbank" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="14sp" android:letterSpacing="0.02" />
                 </FrameLayout>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_faysalbank" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_faysalbank" android:textColor="#616161" android:textStyle="bold" android:textSize="15sp" />
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
@@ -154,7 +154,7 @@
                     <ImageView android:layout_width="44dp" android:layout_height="44dp" android:src="@drawable/ic_badge_accent" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/initials_raastid" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="14sp" android:letterSpacing="0.02" />
                 </FrameLayout>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_raastid" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_raastid" android:textColor="#616161" android:textStyle="bold" android:textSize="15sp" />
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
@@ -171,7 +171,7 @@
                     <ImageView android:layout_width="44dp" android:layout_height="44dp" android:src="@drawable/ic_badge_accent" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center" android:text="@string/initials_bankalfalah" android:textColor="#FFFFFF" android:textStyle="bold" android:textSize="14sp" android:letterSpacing="0.02" />
                 </FrameLayout>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_bankalfalah" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_bankalfalah" android:textColor="#616161" android:textStyle="bold" android:textSize="15sp" />
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
@@ -187,7 +187,7 @@
                 <FrameLayout android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_badge_gray">
                     <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_gravity="center" android:src="@drawable/ic_bank_building" />
                 </FrameLayout>
-                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_other_bank" android:textStyle="bold" android:textSize="15sp" />
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="14dp" android:text="@string/method_other_bank" android:textColor="#616161" android:textStyle="bold" android:textSize="15sp" />
                 <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_chevron_right" />
             </LinearLayout>
 
